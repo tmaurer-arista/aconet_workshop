@@ -9,27 +9,8 @@ port_profiles:
     spanning_tree_portfast: edge
     port_channel:
       mode: active
-  - profile: SERVER-GROUP1
-    mode: access
-    vlans: 11
-    spanning_tree_portfast: edge
-    port_channel:
-      mode: active
 
 servers:
-  - name: s2-host1
-    adapters:
-      - endpoint_ports: [Ethernet1,Ethernet2]
-        switch_ports: [Ethernet4,Ethernet4]
-        switches: [s2-leaf1,s2-leaf2]
-        profile: SERVER-GROUP1
-        
-  - name: s2-host2
-    adapters:
-      - endpoint_ports: [Ethernet1,Ethernet2]
-        switch_ports: [Ethernet4,Ethernet4]
-        switches: [s2-leaf3,s2-leaf4]
-        profile: SERVER-GROUP1
 
 # Alternative Way, Switch-Port-Centric:
 #  - switches:
