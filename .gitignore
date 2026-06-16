@@ -1,0 +1,11 @@
+# Ignore local config backups and generated files
+_removed/
+config_backup/
+custom_anta_catalogs/
+documentation/
+intended/
+reports/
+group_vars/FABRIC-all.yml
+.DS_Store
+deploy.yml
+basic_config.txt

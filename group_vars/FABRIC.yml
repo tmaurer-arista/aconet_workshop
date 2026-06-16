@@ -1,0 +1,28 @@
+---
+# FABRIC.yml
+# General definition of the fabric and its properties.
+
+fabric_name: FABRIC
+
+underlay_routing_protocol: ebgp
+overlay_routing_protocol: ebgp
+
+p2p_uplinks_mtu: 1500
+
+default_interfaces:
+  - types: [spine]
+    platforms: [default]
+    downlink_interfaces: [Ethernet2-5]
+  - types: [l3leaf]
+    platforms: [default]
+    uplink_interfaces: [Ethernet2-3]
+
+mgmt_interface: Management0
+mgmt_interface_vrf: default
+mgmt_interface_description: null
+
+management_eapi:
+  enabled: true
+
+custom_structured_configuration_enable_password:
+  disabled: false

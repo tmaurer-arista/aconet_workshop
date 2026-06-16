@@ -1,0 +1,16 @@
+# test.yml
+
+- name: Run Fabric states validation
+  hosts: FABRIC
+  tasks:
+    - name: Validate states using ANTA
+      ansible.builtin.import_role:
+        name: arista.avd.anta_runner
+      vars:
+        avd_catalogs_extra_fabric_validation: true
+        anta_report_expand_results: true
+        avd_catalogs_filters:
+          - skip_tests: # Skipping some tests due to virtual lab environment
+              - VerifyMemoryUtilization
+              - VerifyFileSystemUtilization
+              - VerifyLoggingErrors

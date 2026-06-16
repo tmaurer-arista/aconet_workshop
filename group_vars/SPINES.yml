@@ -1,0 +1,18 @@
+---
+# SPINES.yml
+# Definition of the spines in the fabric.
+
+type: spine
+
+spine:
+  defaults:
+    platform: cEOS-LAB
+    loopback_ipv4_pool: 10.255.0.0/24
+    bgp_as: 65100
+  nodes:
+    - name: s2-spine1
+      id: 1
+      mgmt_ip: 192.168.0.20/24
+    - name: s2-spine2
+      id: 2
+      mgmt_ip: 192.168.0.21/24
